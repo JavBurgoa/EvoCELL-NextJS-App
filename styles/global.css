@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
+
+.content{
+	margin-left:20px;
+	margin-right:20px;
+
+}
+
+.title{
+	overflow:auto;
+	height:100px;
+	margin-top:20px;
+	margin-bottom: 20px;
+
+}
+
+.title h1{
+  font-family: 'ABeeZee', sans-serif;
+  float:left;
+  margin-left: 100px;
+
+}
+
+.title img{
+	float:left;
+	width:300px;
+	
+}
+
+.footer{
+	text-align:center;
+	margin-top:20px;
+}
+
+table{
+	border-collapse: collapse;
+	max-width: 90%;
+	margin:0 auto;
+	font-size: 1em;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+	-moz-border-radius:6px;
+}
+
+thead tr{
+	font-family: 'ABeeZee', sans-serif;
+	text-align:left;
+	font-size: 20px;
+	background-color: #009879;
+    color: #ffffff;
+}
+
+.speciesHeader{
+	width:15%;
+}
+
+.paperHeader{
+	width:25%;
+}
+
+.downloadHeader{
+	text-align: center;
+}
+
+table th,
+table td {
+	padding: 12px 15px;
+}
+
+
+table tbody tr{
+	border-bottom: 1px solid #dddddd;
+	font-family: 'Arimo', sans-serif;
+}
+
+table tbody tr:nth-of-type(even) {
+	background-color: #f3f3f3;
+}
+
+table tbody tr:last-of-type {
+	border-bottom: 2px solid #009879;
+	border-radius: 0 10px 0 0;
+}
+
+.buttonContainer{
+	text-align: center;
+}
+
+.buttonContainer button{
+	font-size:20px;
+	font-weight: bold;
+	color: white;
+	background-color: #056F85;
+	border-color: transparent;
+	cursor: pointer;
+	border-radius: 5px 5px 5px 5px;
+
+}

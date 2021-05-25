@@ -1,52 +1,47 @@
 import fs from 'fs';
-import Link from 'next/link';
 
-
-// Main datasheet home page
-const Home = ({ data }) => {
+const Datasheet = ({ data }) => {
 	// List all JSON files given our structure
 	const columns = ['Species', 'Paper', 'Ontogenic_Stage', 'Number_of_cells', 'GEO_Number']
 	
-	const al = (e, path) => {return alert(path)} //erase
+	const al = (e, path) => {
+
+		return alert(path)
+	} //erase
 
 	return (
 	<>
-		<table>
-		  <thead>
+		<h1>EvoCELL App</h1>
+
+		<table id = "table_id" class = "Table">
 			<tr>
-				<th className="speciesHeader">Species</th>
-				<th className="paperHeader">Paper</th>
+				<th style = {{width:'15%'}}>Species</th>
+				<th>Paper</th>
 				<th>Ontogenic stage</th>
 				<th>Number of cells</th>
 				<th>GEO Number</th>
-				<th className="downloadHeader">Download</th>
+				<th>Download</th>
 			</tr>
-		  </thead>
-		  <tbody>
 			{
 			data.map( array => <>
 							   <tr>
 									{columns.map( col => <td key = {col}>{array[col]}</td>) }
 
-									<td className = "buttonContainer">
-										<button onClick={(e) => al(e, '../../Datasets/S3database/' + array.Species.replace(' ', '_') + '/' + array.Species.replace(' ', '_') + '.json')}>↓</button>
+									<td>
+										<button onClick={(e) => al(e, '../../Datasets/S3database/' + array.Species.replace(' ', '_') + '/' + array.Species.replace(' ', '_') + '.json')}>Download</button>
 									</td>
 							   </tr>
 							   </>
 					)
 			}
-		</tbody>
 		</table>
 	</>
-
 	)
 };
 
-export default Home;
+export default Datasheet;
 
 
-// Get all JSONs content into a single array
-// Also, if this code below does not exist, import fs on the top gives an error
 export async function getStaticProps() {
 
 	const speciesNames = fs.readdirSync('../../Datasets/S3database/'); // important: SYNC
